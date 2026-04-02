@@ -7,7 +7,7 @@
 
 body {
     background-color: var(--bg-black);
-    color: white;
+    color: #FDF93F;
     font-family: var(--terminal-font);
     margin: 0;
     overflow-x: hidden;
