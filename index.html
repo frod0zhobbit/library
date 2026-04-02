@@ -13,6 +13,11 @@
             <label for="search-input" class="query-label">[SEARCH_QUERY]></label>
             <input type="text" id="search-input" placeholder="AWAITING_INPUT..." autocomplete="off">
         </div>
+        
+        <div id="db-stats" class="stats-box">
+            FILES_LOCATED: <span id="count-current">0</span> / <span id="count-total">0</span>
+        </div>
+
         <button id="filter-toggle" class="neon-button">FILTERS.exe</button>
     </header>
 
@@ -21,6 +26,9 @@
             <div class="col-author">ORIGINATOR</div>
             <div class="col-title">FILE_NAME</div>
             <div class="col-category">SECTOR</div>
+            <div class="col-kyle">KYLE</div>
+            <div class="col-story">SG</div>
+            <div class="col-good">GR</div>
             <div class="col-status">ACCESS</div>
         </div>
 
@@ -51,7 +59,7 @@
                     <label for="filter-category">SECTOR_TYPE</label>
                     <select id="filter-category">
                         <option value="all">ALL_SECTORS</option>
-                        </select>
+                    </select>
                 </div>
             </div>
 
