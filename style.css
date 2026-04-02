@@ -1,0 +1,142 @@
+:root {
+    --neon-cyan: #00f3ff;
+    --neon-pink: #ff00ff;
+    --bg-black: #050505;
+    --terminal-font: 'Courier New', Courier, monospace;
+}
+
+body {
+    background-color: var(--bg-black);
+    color: white;
+    font-family: var(--terminal-font);
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* Header & Search */
+.hud-header {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--neon-cyan);
+    position: sticky;
+    top: 0;
+    background: rgba(5, 5, 5, 0.9);
+    z-index: 100;
+}
+
+.system-query-box {
+    border: 1px solid var(--neon-cyan);
+    background: rgba(0, 243, 255, 0.05);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.2);
+}
+
+#search-input {
+    background: transparent;
+    border: none;
+    color: var(--neon-cyan);
+    font-family: var(--terminal-font);
+    outline: none;
+    width: 250px;
+    font-size: 1rem;
+}
+
+.query-label {
+    color: var(--neon-pink);
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.neon-button {
+    background: transparent;
+    border: 1px solid var(--neon-pink);
+    color: var(--neon-pink);
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: var(--terminal-font);
+    box-shadow: 0 0 5px var(--neon-pink);
+}
+
+/* List Layout */
+#library-hud { padding: 20px; }
+
+.list-header, .book-row {
+    display: flex;
+    padding: 15px;
+    border-bottom: 1px solid #222;
+    align-items: center;
+}
+
+.list-header {
+    color: var(--neon-pink);
+    font-weight: bold;
+    border-bottom: 2px solid var(--neon-pink);
+}
+
+.col-author, .col-title { flex: 2; overflow: hidden; text-overflow: ellipsis; }
+.col-category { flex: 1.5; color: #aaa; }
+.col-status { flex: 0 0 120px; text-align: right; }
+
+.book-row { transition: 0.3s; }
+.book-row:hover {
+    background: rgba(0, 243, 255, 0.05);
+    color: var(--neon-cyan);
+    box-shadow: inset 5px 0 0 var(--neon-cyan);
+}
+
+.decrypted .col-status { color: var(--neon-cyan); text-shadow: 0 0 5px var(--neon-cyan); }
+.locked .col-status { color: var(--neon-pink); opacity: 0.5; }
+
+/* Side Panel */
+.side-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 320px;
+    height: 100vh;
+    background: rgba(10, 10, 10, 0.98);
+    border-left: 1px solid var(--neon-pink);
+    transform: translateX(100%);
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+    padding: 20px;
+}
+
+.side-panel.is-active { transform: translateX(0); }
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    color: var(--neon-pink);
+}
+
+.filter-group { margin-bottom: 30px; }
+.group-label { display: block; font-size: 0.8rem; color: #666; margin-bottom: 15px; }
+
+/* Toggles & Selects */
+.toggle-container { display: flex; align-items: center; cursor: pointer; margin-bottom: 10px; }
+.toggle-container input { display: none; }
+.toggle-switch { width: 34px; height: 18px; border: 1px solid var(--neon-pink); margin-right: 10px; position: relative; }
+.toggle-switch::after { content: ''; position: absolute; width: 12px; height: 12px; top: 2px; left: 2px; background: var(--neon-pink); transition: 0.3s; }
+input:checked + .toggle-switch { border-color: var(--neon-cyan); box-shadow: 0 0 10px var(--neon-cyan); }
+input:checked + .toggle-switch::after { left: 18px; background: var(--neon-cyan); }
+
+select {
+    width: 100%;
+    background: #111;
+    border: 1px solid var(--neon-cyan);
+    color: var(--neon-cyan);
+    padding: 8px;
+    font-family: var(--terminal-font);
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 90% 100%, 0 100%);
+}
+
+/* Sliders */
+input[type=range] { -webkit-appearance: none; width: 100%; background: transparent; }
+input[type=range]::-webkit-slider-runnable-track { height: 2px; background: var(--neon-pink); }
+input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; height: 16px; width: 8px; background: var(--neon-cyan); margin-top: -7px; cursor: pointer; box-shadow: 0 0 10px var(--neon-cyan); }

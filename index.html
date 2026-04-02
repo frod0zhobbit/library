@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KYLE_LIBRARY // DATABASE_ACCESS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="hud-header">
+        <div class="system-query-box">
+            <label for="search-input" class="query-label">[SEARCH_QUERY]></label>
+            <input type="text" id="search-input" placeholder="AWAITING_INPUT..." autocomplete="off">
+        </div>
+        <button id="filter-toggle" class="neon-button">FILTERS.exe</button>
+    </header>
+
+    <main id="library-hud">
+        <div class="list-header">
+            <div class="col-author">ORIGINATOR</div>
+            <div class="col-title">FILE_NAME</div>
+            <div class="col-category">SECTOR</div>
+            <div class="col-status">ACCESS</div>
+        </div>
+
+        <div id="book-list">
+            <div class="loading">INITIALIZING_SYSTEM_SCAN...</div>
+        </div>
+    </main>
+
+    <aside id="filter-panel" class="side-panel">
+        <div class="panel-header">
+            <span class="panel-title">[SYSTEM_DIAGNOSTICS]</span>
+            <button id="close-filters" class="neon-button-small">X</button>
+        </div>
+        
+        <div class="filter-groups">
+            <div class="filter-group">
+                <span class="group-label">STATUS_FLAGS</span>
+                <label class="toggle-container">
+                    <input type="checkbox" id="filter-read-only">
+                    <span class="toggle-switch"></span>
+                    <span class="toggle-text">SHOW_ONLY_DECRYPTED</span>
+                </label>
+            </div>
+
+            <div class="filter-group">
+                <span class="group-label">DATA_SECTORS</span>
+                <div class="select-wrapper">
+                    <label for="filter-category">SECTOR_TYPE</label>
+                    <select id="filter-category">
+                        <option value="all">ALL_SECTORS</option>
+                        </select>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <span class="group-label">LOG_CALIBRATION</span>
+                <div class="slider-wrapper">
+                    <div class="slider-header">
+                        <label>MIN_RATING</label>
+                        <span id="rating-val" class="neon-text">0.0</span>
+                    </div>
+                    <input type="range" id="filter-rating" min="0" max="5" step="0.5" value="0">
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
