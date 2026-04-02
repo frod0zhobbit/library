@@ -4,7 +4,7 @@ const emojiMap = {
     "Science Fiction": "🪐", "History": "⌛️", "Memoir": "✍️", "Literature": "📜",
     "Fantasy": "🧙‍♂️", "Humor": "🤣", "Horror": "🧛‍♂️", "Biography": "🙋🏻‍♂️",
     "Politics": "⚖️", "Science": "🧬", "Government": "🏛️", "True Crime": "🕵️‍♂️",
-    "Young Adult": "🖍️", "Historical Fiction": "⏳", "Dystopia": "⛓️‍💥", "Philosophy": "🤔",
+    "Young Adult": "🖍️", "Historical Fiction": "⏳", "Dystopian": "⛓️‍💥", "Philosophy": "🤔",
     "Race": "✊🏽", "Sociology": "👥", "Social Justice": "📣", "Religion": "✝️",
     "Economics": "💰", "Psychology": "🧠", "Nature": "🌱", "Environment": "🌎",
     "Technology": "🛜", "Linguistics": "🗣️", "Art": "🖼️", "Music": "🎼",
